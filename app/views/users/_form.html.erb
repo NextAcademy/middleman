@@ -1,3 +1,19 @@
+<%= form.fields_for :company do |company_form| %>
+  <div class="text-field">
+    <%= company_form.label :title %>
+    <%= company_form.text_field :title, type: 'text' %>
+  </div>
+  <div class="text-field">
+    <%= company_form.label :url %>
+    <%= company_form.text_field :url, type: 'text' %>
+  </div>
+<% end %> 
+
+<div class="text-field">
+  <%= form.label :full_name %>
+  <%= form.text_field :full_name, type: 'text' %>
+</div>
+
 <div class="text-field">
   <%= form.label :email %>
   <%= form.text_field :email, type: 'email' %>
