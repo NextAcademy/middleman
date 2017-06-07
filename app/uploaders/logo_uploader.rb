@@ -4,30 +4,28 @@ class LogoUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
-  # CarrierWave.configure do |config|
-  #   config.fog_provider = 'fog/aws'                        # required
-  #   config.fog_credentials = {
-  #     provider:              'AWS',                        # required
-  #     aws_access_key_id:     ENV['access_key'],                        # required
-  #     aws_secret_access_key: ENV['secret'],                        # required
-  #     region:                'ap-southeast-1',                  # optional, defaults to 'us-east-1'
-  #     host:                  's3.example.com',             # optional, defaults to nil
-  #     endpoint:              'https://s3.example.com:8080' # optional, defaults to nil
-  #   }
-  #   config.fog_directory  = 'next-academy-middleman'                          # required
-  #   config.fog_public     = false                                        # optional, defaults to true
-  #   config.fog_attributes = { cache_control: "public, max-age=#{365.day.to_i}" } # optional, defaults to {}
-  # end
+  CarrierWave.configure do |config|
+    config.fog_provider = 'fog/aws'                        # required
+    config.fog_credentials = {
+      provider:              'AWS',                        # required
+      aws_access_key_id:     ENV['access_key'],                        # required
+      aws_secret_access_key: ENV['secret'],                        # required
+      region:                'ap-southeast-1',                  # optional, defaults to 'us-east-1'
+    }
+    config.fog_directory  = 'next-academy-middleman'                          # required
+    config.fog_public     = false                                        # optional, defaults to true
+    # config.fog_attributes = { cache_control: "public, max-age=#{365.day.to_i}" } # optional, defaults to {}
+  end
   
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  # storage :file
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
+  # def store_dir
+  #   "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  # end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url

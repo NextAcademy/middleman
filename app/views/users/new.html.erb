@@ -6,8 +6,8 @@
 
 
   <div class="row">
-    <div class="three wide column"></div>
-    <div class="five wide column">
+    <div class="four wide column"></div>
+    <div class="three wide column">
       <h1>Tech Talent?</h1>
 
       We will connect you with our students.
@@ -15,25 +15,24 @@
       <li> NEXT Academy - Malaysia’s first tech school with coding bootcamps </li>
       <li>Graduated >300 students </li>
       <li>Students employed by >50 companies </li>
-      <li>We run Web development bootcamp (Ruby-on-Rails) & iOS Mobile development bootcamp (Obj-C & Swift) </li>
+      <li>We run Web development bootcamp (Ruby-on-Rails) iOS Mobile development bootcamp (Obj-C  Swift) </li>
       <li>We will be introducing more tech stacks...</li>
 
     </div>
-    <div class="four wide column">
+    <div class="one wide column"> </div>
+    <div class="three wide column">
       <p>Beta Version</p>
       <h1>Join us. It's free.</h1>
 
-      <form class="ui form">
-        <%= form_for @user do |form| %>
-          <%= render partial: '/users/form', object: form %>
-      
-          <%= form.submit "Submit", class: "ui button"%>
+      <%= form_for @user, html: {class: "ui form"} do |form| %>
+        <%= render partial: '/users/form', object: form %>
+    
+        <%= form.submit "Submit", class: "ui button"%>
 
-        <% end %>
-      </form>
+      <% end %>
 
     </div>
-    <div class="four wide column"></div>
+    <div class="five wide column"></div>
   </div>
 </div>
 
