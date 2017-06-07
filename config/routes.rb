@@ -15,7 +15,11 @@ Rails.application.routes.draw do
 
   resources :companies, only: [:edit, :index, :show, :update]
 
+  resources :versions, only: [:index]
+
   get "/thank_you" => "companies#thankyou", as: "thank_you"
+
+  post "/versions/:id/approve" => "versions#approve", as: "version_approve"
 
   root 'users#new'
 end

@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607020207) do
+ActiveRecord::Schema.define(version: 20170607031430) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
     t.string "title"
@@ -20,9 +23,9 @@ ActiveRecord::Schema.define(version: 20170607020207) do
     t.string "industry"
     t.string "location"
     t.string "engineers"
-    t.string "core_stack"
+    t.string "core_stack", array: true
     t.string "stage"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "verficiation", default: false
@@ -42,4 +45,22 @@ ActiveRecord::Schema.define(version: 20170607020207) do
     t.index ["remember_token"], name: "index_users_on_remember_token"
   end
 
+  create_table "versions", force: :cascade do |t|
+    t.string "title"
+    t.string "url"
+    t.string "logo"
+    t.text "description"
+    t.string "industry"
+    t.string "location"
+    t.string "engineers"
+    t.string "core_stack", array: true
+    t.string "stage"
+    t.bigint "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_versions_on_company_id"
+  end
+
+  add_foreign_key "companies", "users"
+  add_foreign_key "versions", "companies"
 end

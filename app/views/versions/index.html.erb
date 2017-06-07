@@ -1,0 +1,12 @@
+<% @versions.each do |x| %>
+  <%= x.title %>
+  <%= x.url  %>
+  <%= x.logo %>
+  <%= x.description %>
+  <%= x.industry %>
+  <%= x.location %>
+  <%= x.engineers %>
+  <%= x.core_stack %>
+  <%= x.stage %>
+  <%= button_to "Verify this version", version_approve_path(x) %>
+<% end %>

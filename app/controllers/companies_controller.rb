@@ -4,14 +4,32 @@ class CompaniesController < ApplicationController
   end
 
   def update
+    #everytime company attributes get updated
     @company = Company.find(params[:id])
-    if @company.created_at == @company.updated_at 
-      @company.update(company_params)
+    byebug
+    if @company.version == nil
+      @version = Version.new(company_params)
+      @version.company_id = @company.id
+      if @version.save 
+        redirect_to thank_you_path
+      else
+        redirect_to edit_company_path(@company)
+      end
     else
-      byebug
-      # @company_version = current_user.company.create(company_params)
+      @company.version.update(company_params)
+      redirect_to thank_you_path
     end
-    redirect_to thank_you_path
+
+    #saves the first time the company attributes get updated and subsequent gets approved 
+    # if @company.created_at == @company.updated_at 
+    #   @company.update(company_params)
+    # else
+    #   @version = Version.new(company_params)
+    #   if @version.save
+    #   
+    #   end
+    # end
+    
   end
 
   def thankyou
