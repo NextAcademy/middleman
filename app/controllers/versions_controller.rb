@@ -1,6 +1,10 @@
 class VersionsController < ApplicationController
   def index
-    @versions = Version.all
+    if current_user.superadmin?
+      @versions = Version.all
+    else
+      redirect_to thank_you_path
+    end
   end
 
   def approve
