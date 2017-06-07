@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170606032216) do
+ActiveRecord::Schema.define(version: 20170607020207) do
 
   create_table "companies", force: :cascade do |t|
     t.string "title"
@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 20170606032216) do
     t.string "core_stack"
     t.string "stage"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "verficiation", default: false
     t.index ["user_id"], name: "index_companies_on_user_id"
   end
 

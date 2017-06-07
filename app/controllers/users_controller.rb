@@ -6,7 +6,7 @@ class UsersController < Clearance::UsersController
   def create
     @user = User.new(user_params)
     @company = Company.new(title: params[:user][:company][:title], url: params[:user][:company][:url])
-    if @user.save  ## what happens if user save but company doesnt save???
+    if @user.save 
       @company.user_id = @user.id
       if @company.save
         sign_in @user 
