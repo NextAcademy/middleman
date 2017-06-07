@@ -32,7 +32,8 @@ gem 'jbuilder', '~> 2.5'
 
 
 gem 'clearance'
-gem "figaro"
+gem 'figaro'
+gem 'carrierwave'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
