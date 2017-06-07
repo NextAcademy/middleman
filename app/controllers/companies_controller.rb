@@ -6,7 +6,6 @@ class CompaniesController < ApplicationController
   def update
     #everytime company attributes get updated
     @company = Company.find(params[:id])
-    byebug
     if @company.version == nil
       @version = Version.new(company_params)
       @version.company_id = @company.id
@@ -17,6 +16,7 @@ class CompaniesController < ApplicationController
       end
     else
       @company.version.update(company_params)
+      sign_out
       redirect_to thank_you_path
     end
 

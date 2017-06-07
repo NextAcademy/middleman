@@ -2,8 +2,23 @@ class LogoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
+  # CarrierWave.configure do |config|
+  #   config.fog_provider = 'fog/aws'                        # required
+  #   config.fog_credentials = {
+  #     provider:              'AWS',                        # required
+  #     aws_access_key_id:     ENV['access_key'],                        # required
+  #     aws_secret_access_key: ENV['secret'],                        # required
+  #     region:                'ap-southeast-1',                  # optional, defaults to 'us-east-1'
+  #     host:                  's3.example.com',             # optional, defaults to nil
+  #     endpoint:              'https://s3.example.com:8080' # optional, defaults to nil
+  #   }
+  #   config.fog_directory  = 'next-academy-middleman'                          # required
+  #   config.fog_public     = false                                        # optional, defaults to true
+  #   config.fog_attributes = { cache_control: "public, max-age=#{365.day.to_i}" } # optional, defaults to {}
+  # end
+  
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
@@ -30,8 +45,8 @@ class LogoUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  version :logo do
-    process resize_to_fit: [170,170]
+  version :thumb do
+    process resize_to_fit: [170, 170]
   end
 
   # Add a white list of extensions which are allowed to be uploaded.

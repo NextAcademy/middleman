@@ -6,6 +6,7 @@ class Company < ApplicationRecord
 
   mount_uploader :logo, LogoUploader
 
+
   # validates :
 
   def update_version(version)
