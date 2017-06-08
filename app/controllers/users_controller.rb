@@ -1,11 +1,5 @@
 class UsersController < Clearance::UsersController
-  # def new 
-  #   if signed_in?
-  #     redirect_to thank_you_path
-  #   else
-  #     @user = User.new
-  #   end
-  # end
+
 
   def create
     @user = User.new(user_params)
@@ -36,7 +30,4 @@ class UsersController < Clearance::UsersController
     params.require(:user).permit(:full_name, :email, :password)
   end
 
-  # def company_params
-  #   params.require(:company).permit(:title, :url)
-  # end
 end

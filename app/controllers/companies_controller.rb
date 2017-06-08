@@ -19,17 +19,6 @@ class CompaniesController < ApplicationController
       sign_out
       redirect_to thank_you_path
     end
-
-    #saves the first time the company attributes get updated and subsequent gets approved 
-    # if @company.created_at == @company.updated_at 
-    #   @company.update(company_params)
-    # else
-    #   @version = Version.new(company_params)
-    #   if @version.save
-    #   
-    #   end
-    # end
-    
   end
 
   def thankyou
