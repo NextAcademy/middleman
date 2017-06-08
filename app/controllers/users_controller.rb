@@ -1,7 +1,11 @@
 class UsersController < Clearance::UsersController
-  def new 
-    @user = User.new
-  end
+  # def new 
+  #   if signed_in?
+  #     redirect_to thank_you_path
+  #   else
+  #     @user = User.new
+  #   end
+  # end
 
   def create
     @user = User.new(user_params)
@@ -15,7 +19,16 @@ class UsersController < Clearance::UsersController
       end
       @user.destroy
     end
-    redirect_to sign_up_path
+    redirect_to welcome_path
+  end
+
+  def welcome
+    if signed_in?
+      redirect_to edit_company_path(current_user.company)
+    else
+      @user = User.new
+      render "users/new"
+    end
   end
 
   private

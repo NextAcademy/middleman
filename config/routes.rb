@@ -11,7 +11,6 @@ Rails.application.routes.draw do
 
   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
   delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
-  get "/sign_up" => "users#new", as: "sign_up"
 
   resources :companies, only: [:edit, :index, :show, :update]
 
@@ -21,5 +20,7 @@ Rails.application.routes.draw do
 
   post "/versions/:id/approve" => "versions#approve", as: "version_approve"
 
-  root 'users#new'
+  get "/welcome" => "users#welcome", as: "welcome"
+
+  root 'users#welcome'
 end
