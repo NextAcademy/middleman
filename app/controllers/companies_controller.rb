@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  layout 'landing'
   def edit
     @company = Company.find(params[:id])
   end

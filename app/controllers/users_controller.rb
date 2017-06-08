@@ -1,6 +1,5 @@
 class UsersController < Clearance::UsersController
 
-
   def create
     @user = User.new(user_params)
     @company = Company.new(title: params[:user][:company][:title], url: params[:user][:company][:url])

@@ -26,7 +26,7 @@ $align:center;
   width:$full;
 }
 
-input {
+input, textarea{
   width:95%;
   padding:15px 0px 15px 8px;
   border-radius:5px;
@@ -38,6 +38,18 @@ input {
   color:#6E6E6E;
   text-shadow:#000 0px 1px 5px;
 }
+
+input[type="radio"]{
+  display: inline;
+  width: 5%;
+}
+
+select {
+  color: black;
+  width: 95%;
+  margin-bottom: 10px;
+}
+
 
 input[type="submit"]{
   width:95%;
@@ -62,7 +74,7 @@ input[type="submit"]{
   -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255,255,255,0.2)));
 }
 
-input:focus{
+input:focus, textarea:focus{
   box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.7), 0 1px 1px -1px rgba(255,255,255,0.3);
   background:rgba(0,0,0,0.6);
   @include easeme;
