@@ -7,7 +7,6 @@ class CompaniesController < ApplicationController
     #everytime company attributes get updated
     @company = Company.find(params[:id])
     if @company.version == nil
-      byebug
       @version = Version.new(company_params)
       @version.company_id = @company.id
       if @version.save 

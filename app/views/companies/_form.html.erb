@@ -21,7 +21,7 @@
 <div class="text-field">
   <%= form.label :industry %>
   <%= form.select :industry, [['Finance and Banking'],['Tourism'],['Technology'],['Food & Beverages'],['Fashion'],['other']] %>
-  <%= form.text_area :industry, id: "industry_text", style: "display: none" %>
+  <%= form.text_field :industry, id: "industry_text", style: "display: none", placeholder: 'Insert your industry here' %>
 </div>
 
 <div class="text-field">
@@ -38,7 +38,7 @@
 </div>
 
 <div class="text-field">
-  <%= form.label :core_stack %>
+  <%= form.label :core_stack, 'Core tech stack' %>
   <%= form.text_area :core_stack %>
 </div>
 
@@ -49,13 +49,20 @@
 
 <script>
   $(document).ready(function(){
+    var selection = $('#company_industry').val();
+    if (selection === "other" ){
+      $('#industry_text').show()
+      $('#industry_text').attr('name','company["industry"]')
+    }
     $('#company_industry').on('change',function(){
       var selection = $(this).val();
       if (selection === "other" ){
         $('#industry_text').show()
+        $('#industry_text').attr('name','company[industry]')
       }
       else {
         $('#industry_text').hide()
+        $('#industry_text').attr('name','empty')
       }
       console.log("hi");
     });

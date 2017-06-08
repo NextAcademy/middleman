@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170607031430) do
     t.string "industry"
     t.string "location"
     t.boolean "engineers"
-    t.string "core_stack", array: true
+    t.string "core_stack"
     t.string "stage"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20170607031430) do
     t.string "industry"
     t.string "location"
     t.string "engineers"
-    t.string "core_stack", array: true
+    t.string "core_stack"
     t.string "stage"
     t.bigint "company_id"
     t.datetime "created_at", null: false

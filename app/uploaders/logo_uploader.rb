@@ -10,9 +10,9 @@ class LogoUploader < CarrierWave::Uploader::Base
       provider:              'AWS',                        # required
       aws_access_key_id:     ENV['access_key'],                        # required
       aws_secret_access_key: ENV['secret'],                        # required
-      region:                'ap-southeast-1',                  # optional, defaults to 'us-east-1'
+      region:                'ap-southeast-1'                 # optional, defaults to 'us-east-1'
     }
-    config.fog_directory  = 'next-academy-middleman'                          # required
+    config.fog_directory  = ENV['bucket_name']                         # required
     config.fog_public     = false                                        # optional, defaults to true
     # config.fog_attributes = { cache_control: "public, max-age=#{365.day.to_i}" } # optional, defaults to {}
   end
