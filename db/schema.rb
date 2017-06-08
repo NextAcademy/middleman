@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20170607031430) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "verficiation", default: false
     t.index ["user_id"], name: "index_companies_on_user_id"
   end
 
