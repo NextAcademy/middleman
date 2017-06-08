@@ -15,30 +15,49 @@
 
 <div class="text-field">
   <%= form.label :description %>
-  <%= form.text_field :description %>
+  <%= form.text_area :description %>
 </div>
 
 <div class="text-field">
   <%= form.label :industry %>
-  <%= form.text_field :industry %>
+  <%= form.select :industry, [['Finance and Banking'],['Tourism'],['Technology'],['Food & Beverages'],['Fashion'],['other']] %>
+  <%= form.text_area :industry, id: "industry_text", style: "display: none" %>
 </div>
 
 <div class="text-field">
   <%= form.label :location %>
-  <%= form.text_field :location %>
+  <%= form.country_select :location, priority_countries: ["MY"] %>
 </div>
 
 <div class="text-field">
   <%= form.label :engineers %>
-  <%= form.text_field :engineers %>
+  <%= form.label :engineers, "Yes", value: true %>
+  <%= form.radio_button :engineers, true %>
+  <%= form.label :engineers, "No", value: false %>
+  <%= form.radio_button :engineers, false, checked: true%>
 </div>
 
 <div class="text-field">
   <%= form.label :core_stack %>
-  <%= form.text_field :core_stack %>
+  <%= form.text_area :core_stack %>
 </div>
 
 <div class="text-field">
-  <%= form.label :stage %>
-  <%= form.text_field :stage %>
+  <%= form.label :no_of_employees %>
+  <%= form.select :stage, [["1-5"], ["5-10"],["10-15"],["15-20"],["20+"]] %>
 </div>
+
+<script>
+  $(document).ready(function(){
+    $('#company_industry').on('change',function(){
+      var selection = $(this).val();
+      if (selection === "other" ){
+        $('#industry_text').show()
+      }
+      else {
+        $('#industry_text').hide()
+      }
+      console.log("hi");
+    });
+  });
+</script>
