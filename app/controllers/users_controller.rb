@@ -21,7 +21,7 @@ class UsersController < Clearance::UsersController
       redirect_to edit_company_path(current_user.company)
     else
       @user = User.new
-      render "users/new"
+      render "users/new", layout: 'landing'
     end
   end
 

@@ -1,0 +1,61 @@
+
+header
+  .container
+    .row
+      .col-sm-7
+        .header-content
+          .header-content-inner
+            h1
+              | Tech Talent?
+            h2
+              | We will connect you with our students.
+            br
+            .header-content-p
+              p
+                |  NEXT Academy - Malaysia’s first tech school with coding bootcamps 
+              p
+                | Graduated over 300 students 
+              p
+                | Students employed by over 50 companies 
+              p
+                | We run Web development bootcamp (Ruby-on-Rails) iOS Mobile development bootcamp (Obj-C Swift) 
+              p
+                | We will be introducing more tech stacks...
+      .col-sm-5
+        .header-content
+          .header-content-inner
+            h1
+              | Join us. It's free.
+            .wrapper
+              = form_for @user, html: {class: "ui form"} do |form|
+                = render partial: '/users/form', object: form
+                = form.submit "Submit", class: "ui button"
+
+/ section#contact.contact.bg-primary
+  .container
+    h2
+      | Find Us On
+    ul.list-inline.list-social
+      li.social-twitter
+        a[href="#"]
+          i.fa.fa-twitter
+      li.social-facebook
+        a[href="#"]
+          i.fa.fa-facebook
+      li.social-google-plus
+        a[href="#"]
+          i.fa.fa-google-plus
+footer
+  .container
+    p
+      | © 2017 NEXT Academy by Eleventh Division Pte Ltd
+    ul.list-inline
+      li
+        a[href="#"]
+          | Privacy
+      li
+        a[href="#"]
+          | Terms
+      li
+        a[href="#"]
+          | FAQ
