@@ -1,15 +1,12 @@
 <%= form.fields_for :company do |company_form| %>
-    <%#= company_form.label :title %>
-    <%= company_form.text_field :title, type: 'text', placeholder: :title %>
-    <%#= company_form.label :url %>
-    <%= company_form.text_field :url, type: 'text', placeholder: :url %>
-<% end %> 
-
-  <%#= form.label :full_name %>
-  <%= form.text_field :full_name, type: 'text', placeholder: :full_name %>
-
-  <%#= form.label :email %>
-  <%= form.text_field :email, type: 'email', placeholder: :email %>
-
-  <%#= form.label :password %>
-  <%= form.password_field :password, placeholder: :password %>
+  <%= company_form.label 'Company Title' %>
+  <%= company_form.text_field :title, type: 'text' %>
+  <%= company_form.label 'Company Website' %>
+  <%= company_form.text_field :url, type: 'text' %>
+<% end %>
+<%= form.label :full_name %>
+<%= form.text_field :full_name, type: 'text' %>
+<%= form.label :email %>
+<%= form.text_field :email, type: 'email' %>
+<%= form.label :password %>
+<%= form.password_field :password %>
