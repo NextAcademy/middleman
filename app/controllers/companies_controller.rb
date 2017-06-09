@@ -2,6 +2,9 @@ class CompaniesController < ApplicationController
   layout 'landing'
   def edit
     @company = Company.find(params[:id])
+    if current_user.company != @company
+      redirect_to root_path
+    end
   end
 
   def update
