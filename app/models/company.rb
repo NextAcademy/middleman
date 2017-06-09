@@ -5,6 +5,8 @@ class Company < ApplicationRecord
   has_one :version
 
   mount_uploader :logo, LogoUploader
+
+  validates :title, :url, presence: true
   
 
   def update_version(version)
