@@ -7,6 +7,7 @@ class UsersController < Clearance::UsersController
       @company.user_id = @user.id
       if @company.save
         sign_in @user 
+        UserNotifierMailer.send_signup_email(@user).deliver
         redirect_to edit_company_path(@user.company)
         return
       end
