@@ -14,6 +14,7 @@ class CompaniesController < ApplicationController
       @version = Version.new(company_params)
       @version.company_id = @company.id
       if @version.save 
+        sign_out
         redirect_to thank_you_path
       else
         redirect_to edit_company_path(@company)
