@@ -25,12 +25,18 @@ $align:center;
   width:$full;
 }
 
+abbr[title] {
+  text-decoration: none !important;
+  border-botton: none !important;
+  cursor: inherit !important;
+}
+
 input, textarea{
   width:95%;
   padding:15px 0px 15px 8px;
   border-radius:5px;
   box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
-  background:rgba(0,0,0,0.3);
+  background:rgb(167,166,166);
   @include disable;
   border:1px solid rgba(0,0,0,1);
   margin-bottom:10px;

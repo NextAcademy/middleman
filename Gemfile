@@ -26,6 +26,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem "fog-aws"
 gem 'country_select'
+gem 'simple_form'
 
 
 group :development, :test do

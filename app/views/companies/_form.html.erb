@@ -5,11 +5,11 @@
 <%#= form.label :url %>
 <%= form.text_field :url, type: 'text', placeholder: :url %>
 
-<%#= form.label :logo %>
+<%= form.label "Company Logo" %>
 <%= form.file_field :logo %>
 
-<%#= form.label :description %>
-<%= form.text_area :description, type: 'text', placeholder: :description %>
+<%= form.label "Company Description" %>
+<%= form.text_area :description, type: 'text', placeholder: "Describe your company" %>
 
 
 
@@ -24,7 +24,7 @@
 
 
 
-<%= form.label :engineers %>
+<%= form.label "Are you currently employing any engineers?" %>
 <%= form.radio_button :engineers, true %>
 <%= form.label :engineers, "Yes", value: true %>
 <%= form.radio_button :engineers, false, checked: true%>
@@ -33,7 +33,7 @@
 
 
 <%#= form.label :core_stack, 'Core tech stack' %>
-<%= form.text_area :core_stack, placeholder: :core_stack%>
+<%= form.text_area :core_stack, placeholder: "What's your tech stack?"%>
 
 
 
