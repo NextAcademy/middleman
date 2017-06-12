@@ -6,12 +6,12 @@ header
       .col-sm-5
         .header-content
           .header-content-inner
-            h1
-              | Join us. It's free.
+            h2
+              | Chat with our grads. It's free.
             .wrapper
               = form_for @company, html: {class: "ui form"} do |form|
                 = render partial: '/companies/form', object: form
-                = form.submit "Submit", class: "ui button"
+                = form.submit "Confirm", class: "ui button"
 
 
 footer
