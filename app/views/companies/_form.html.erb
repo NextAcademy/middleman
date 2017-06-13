@@ -1,6 +1,6 @@
 
 <%= form.label :title, "Company Title" %>
-<%= form.text_field :title, type: 'text', placeholder: :tile%>
+<%= form.text_field :title, type: 'text', placeholder: :title %>
 
 <%= form.label :url, "Company Url" %>
 <%= form.text_field :url, type: 'text', placeholder: :url %>
@@ -9,7 +9,7 @@
 <%= form.file_field :logo %>
 
 <%= form.label :description, "Company Description" %>
-<%= form.text_area :description, type: 'text', placeholder: "Describe your company" %>
+<%= form.input_field :description, type: 'text', placeholder: "Describe your company", error: "Description is mandatory" %>
 
 
 

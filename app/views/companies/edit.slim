@@ -9,7 +9,7 @@ header
             h2
               | Chat with our grads. It's free.
             .wrapper
-              = form_for @company, html: {class: "ui form"} do |form|
+              = simple_form_for @company, html: {class: "ui form"} do |form|
                 = render partial: '/companies/form', object: form
                 = form.submit "Confirm", class: "ui button"
 
