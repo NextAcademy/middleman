@@ -79,11 +79,11 @@ input[type="submit"]{
   -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255,255,255,0.2)));
 }
 
-input:focus, textarea:focus{
-  box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.7), 0 1px 1px -1px rgba(255,255,255,0.3);
-  background:rgba(0,0,0,0.6);
-  @include easeme;
-}
+// input:focus, textarea:focus{
+//   box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.7), 0 1px 1px -1px rgba(255,255,255,0.3);
+//   background:rgba(0,0,0,0.6);
+//   @include easeme;
+// }
 
 input[type="submit"]:hover{
   opacity:1;
