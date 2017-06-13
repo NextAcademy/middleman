@@ -1,15 +1,15 @@
 
-<%#= form.label :title %>
-<%= form.text_field :title, type: 'text', placeholder: :tile%>
+<%= form.label :title, "Company Title" %>
+<%= form.text_field :title, type: 'text', placeholder: :title %>
 
-<%#= form.label :url %>
+<%= form.label :url, "Company Url" %>
 <%= form.text_field :url, type: 'text', placeholder: :url %>
 
-<%= form.label "Company Logo" %>
+<%= form.label :logo, "Company Logo" %>
 <%= form.file_field :logo %>
 
-<%= form.label "Company Description" %>
-<%= form.text_area :description, type: 'text', placeholder: "Describe your company" %>
+<%= form.label :description, "Company Description" %>
+<%= form.input_field :description, type: 'text', placeholder: "Describe your company", error: "Description is mandatory" %>
 
 
 
@@ -24,7 +24,7 @@
 
 
 
-<%= form.label "Are you currently employing any engineers?" %>
+<%= form.label :engineers, "Are you currently employing any engineers?" %>
 <%= form.radio_button :engineers, true %>
 <%= form.label :engineers, "Yes", value: true %>
 <%= form.radio_button :engineers, false, checked: true%>
@@ -37,7 +37,7 @@
 
 
 
-<%= form.label :no_of_employees %>
+<%= form.label :stage, "No. of Employees" %>
 <%= form.select :stage, [["1-5"], ["5-10"],["10-15"],["15-20"],["20+"]] %>
 
 

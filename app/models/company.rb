@@ -4,9 +4,11 @@ class Company < ApplicationRecord
   belongs_to :user
   has_one :version
 
+  #logo uploader
   mount_uploader :logo, LogoUploader
 
-  validates :title, :url, presence: true
+  #validations 
+  validates :title, :url, :description, presence: true
   
 
   def update_version(version)
