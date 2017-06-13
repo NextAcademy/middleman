@@ -8,7 +8,9 @@ class Company < ApplicationRecord
   mount_uploader :logo, LogoUploader
 
   #validations 
-  validates :title, :url, :description, presence: true
+  validates :title, :url, presence: true
+
+  validates :description, presence: true, on: :update
   
 
   def update_version(version)
