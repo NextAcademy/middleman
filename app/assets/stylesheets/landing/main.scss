@@ -53,6 +53,10 @@ h6 {
   font-weight: 200;
 }
 
+.special_header {
+  text-align: center;
+}
+
 .header-content-form h1 {
   font-family: 'Lato', sans-serif;
   font-weight: 100;
@@ -228,6 +232,7 @@ header .header-content .header-content-inner .list-badges img {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    width: 100%;
   }
   header .header-content .header-content-inner h1 {
     font-size: 35px;
