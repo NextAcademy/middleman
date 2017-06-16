@@ -26,6 +26,10 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def show
+
+  end
+
   def thankyou
   end
 
