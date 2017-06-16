@@ -18,7 +18,13 @@ class UsersController < Clearance::UsersController
 
   def welcome
     if signed_in?
-      redirect_to edit_company_path(current_user.company)
+      if current_user.company.version
+        redirect_to company_path(current_user.company)
+      elsif current_user.superadmin?
+        redirect_to versions_path
+      else
+        redirect_to edit_company_path(current_user.company)
+      end
     else
       @user = User.new
       render "users/new", layout: 'landing'
