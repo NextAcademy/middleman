@@ -27,7 +27,10 @@ class CompaniesController < ApplicationController
   end
 
   def show
-
+    @company = Company.find(params[:id])
+    # unless @company.version
+    #   @company == nil
+    # end
   end
 
   def thankyou

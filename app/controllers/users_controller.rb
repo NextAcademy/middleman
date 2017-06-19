@@ -18,7 +18,7 @@ class UsersController < Clearance::UsersController
 
   def welcome
     if signed_in?
-      if current_user.company.version
+      if current_user.company.version || (current_user.company.created_at != current_user.company.updated_at)
         redirect_to company_path(current_user.company)
       elsif current_user.superadmin?
         redirect_to versions_path

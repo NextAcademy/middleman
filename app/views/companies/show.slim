@@ -6,11 +6,23 @@ header
       .col-sm-7
         .header-content
           .header-content-inner
-            h1.special_header
-              | Your profile has not yet been reviewed!
-            p.special_header
-              | When it is ready, you will be able to view the details of your company on this page.
+            - if @company.version && (@company.created_at == @company.updated_at)
+              h1.special_header
+                | Your profile has not yet been reviewed!
+              p.special_header
+                | When it is ready, you will be able to view the details of your company on this page.
+            - else
+              h1.special_header = @company.title
+              p = @company.url
+              p = image_tag(@company.logo)
+              p = @company.description
+                | = @company.industry
+              p = @company.location
+              p = @company.engineers
+              p = @company.core_stack
+              p = @company.stage
 
+            
 footer
   .container
     p

@@ -13,7 +13,7 @@ class SessionsController < Clearance::SessionsController
       if status.success?
         if @user.superadmin?
           redirect_to versions_path
-        elsif @user.company.version
+        elsif @user.company.version || (@user.company.created_at != @user.company.updated_at)
           redirect_to company_path(@user.company)
         else
           redirect_back_or url_after_create
