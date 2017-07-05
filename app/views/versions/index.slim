@@ -1,0 +1,43 @@
+header
+  .container
+    .row
+      .col-sm-4
+      .col-sm-5
+        .header-content
+          .header-content-inner
+            .wrapper
+              - @versions.each do |x|
+                x.title
+                x.url
+                x.logo
+                x.description
+                x.industry
+                x.location
+                x.engineers
+                x.core_stack
+                x.stage
+                <p>hi</p>
+                
+
+
+<div class=row>
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+    asdfasdfasfd
+    <% @versions.each do |x| %>
+      <p><%= x.title %></p> 
+      <p><%= x.url  %></p> 
+      <p><%= x.logo %></p> 
+      <p><%= x.description %></p> 
+      <p><%= x.industry %></p> 
+      <p><%= x.location %> </p> 
+      <p><%= x.engineers %></p> 
+      <p><%= x.core_stack %></p> 
+      <p><%= x.stage %> </p> 
+      <p><%= button_to "Verify this version", version_approve_path(x)   %></p> 
+      <br>
+      <br>
+    <% end %>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 class VersionsController < ApplicationController
+  layout 'landing'
   def index
     if current_user.superadmin?
       @versions = Version.all

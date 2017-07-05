@@ -9,7 +9,6 @@ class Company < ApplicationRecord
 
   #validations 
   validates :title, :url, presence: true
-
   validates :description, presence: true, on: :update
   
 
