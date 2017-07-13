@@ -1,11 +1,10 @@
-
 header
   .container
     .row
-      .col-sm-3
-      .col-sm-7
+      .col-sm-2
+      .col-sm-8
         .header-content
-          .header-content-inner
+          .header-content-renew
             - if @company.version && (@company.created_at == @company.updated_at)
               h1.special_header
                 | Your profile has not yet been reviewed!
@@ -21,18 +20,3 @@ header
               p = @company.engineers
               p = @company.core_stack
               p = @company.stage
-            
-footer
-  .container
-    p
-      | © 2017 NEXT Academy by Eleventh Division Pte Ltd
-    ul.list-inline
-      li
-        a[href="#"]
-          | Privacy
-      li
-        a[href="#"]
-          | Terms
-      li
-        a[href="#"]
-          | FAQ

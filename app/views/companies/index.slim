@@ -1,0 +1,22 @@
+header
+  .container
+    .row
+      .col-sm-2
+      .col-sm-8
+        .header-content
+          .header-content-renew
+            h1 Companies: 
+            - @companies.each do |x|
+              .header-box
+                h2 = x.title
+                p = x.url
+                p = (image_tag x.logo, size: "50 x 50")
+                p = x.description
+                p = x.industry
+                p = x.location
+                p = x.engineers
+                p = x.core_stack
+                p = x.stage
+                / - byebug
+                  - if x.version
+                    p Verification is pending

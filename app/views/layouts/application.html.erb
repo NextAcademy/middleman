@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'main_page', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-  <div class="ui secondary pointing menu">
-    <a class="item active">
-      Next Academy
-    </a>
-    <div class="right menu">
-      <% if signed_in? %>
-        <%= button_to t(".sign_out"), sign_out_path, method: :delete, class: "ui item" %>
-      <% else %>
-        <%= link_to t(".sign_in"), sign_in_path, class: "ui item" %>
-      <% end %>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid test">
+      <div class="navbar-header">
+        <a class="navbar-brand">Next Academy</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <% if signed_in? %>
+            <li><%= button_to t(".sign_out"), sign_out_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to t(".sign_in"), sign_in_path %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
-  </div>
+  </nav>
 
   <div id="flash">
     <% flash.each do |key, value| -%>
@@ -28,5 +30,7 @@
   </div>
 
   <%= yield %>
+
+  <%= render 'layouts/footer' %>
 </body>
 </html>

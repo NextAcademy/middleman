@@ -24,11 +24,13 @@ html
             | NEXT Connect
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
-              li
                 - if signed_in?
-                  = link_to 'Sign Out', sign_out_path, method: :delete
+                  - if current_user.superadmin?
+                    li = link_to 'Verify Companies', versions_path
+                    li = link_to 'Show all Verified Companies', companies_path
+                  li = link_to 'Sign Out', sign_out_path, method: :delete
                 - else
-                  = link_to 'Sign In', sign_in_path
+                  li = link_to 'Sign In', sign_in_path
 
     = yield
 

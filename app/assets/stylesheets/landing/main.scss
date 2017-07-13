@@ -180,7 +180,7 @@ header {
   position: relative;
   width: 100%;
   min-height: auto;
-  overflow-y: hidden;
+  // overflow-y: hidden;
   background: image-url("bg-pattern.png"), $gray-dark;
   /* fallback for old browsers */
   background: image-url("bg-pattern.png"), -webkit-linear-gradient(to left, $gray-dark, $cyan-dark);
@@ -217,6 +217,28 @@ header .header-content .header-content-inner .list-badges img {
   margin-bottom: 25px;
 }
 
+.header-content-renew {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.header-content-renew h2 {
+  font-size: 30px;
+  line-height: 1.5;
+}
+
+.header-content-renew p {
+  font-size: 14px;
+}
+
+.header-box {
+  border: 1px solid #ccc!important;
+  border-radius: 16px;
+  padding: 15px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
 @media (min-width: 768px) {
   header {
     min-height: 100%;
@@ -224,7 +246,7 @@ header .header-content .header-content-inner .list-badges img {
   header .header-content {
     text-align: left;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
   }
   header .header-content .header-content-inner {
     max-width: none;
