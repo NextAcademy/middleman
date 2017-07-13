@@ -1,5 +1,15 @@
 class CompaniesController < ApplicationController
   layout 'landing'
+
+  def index
+    if current_user.superadmin?
+      @companies = Company.all
+    else
+      redirect_to company_path(current_user.company)
+    end
+  end
+
+
   def edit
     @company = Company.find(params[:id])
     if current_user.company != @company
@@ -27,7 +37,10 @@ class CompaniesController < ApplicationController
   end
 
   def show
-
+    @company = Company.find(params[:id])
+    # unless @company.version
+    #   @company == nil
+    # end
   end
 
   def thankyou

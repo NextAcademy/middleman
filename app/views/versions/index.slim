@@ -1,0 +1,21 @@
+header
+  .container
+    .row
+      .col-sm-2
+      .col-sm-8
+        .header-content
+          .header-content-renew
+              - @versions.each do |x| 
+                .header-box
+                  h2 = x.title
+                  p = x.url
+                  p = (image_tag x.logo, size: "170x200")
+                  p = x.description
+                  p = x.industry
+                  p = x.location
+                  p = x.engineers
+                  p = x.core_stack
+                  p = x.stage
+                  p = button_to "Verify this version", version_approve_path(x)
+
+      
